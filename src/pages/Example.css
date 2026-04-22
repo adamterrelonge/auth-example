@@ -1,0 +1,271 @@
+/* ── Tab bar ─────────────────────────────────────────────────────────── */
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 0;
+}
+
+.tab-btn {
+  padding: 8px 20px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
+  font-family: var(--sans);
+  color: var(--text);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: color 0.2s, border-color 0.2s;
+
+  &:hover {
+    color: var(--accent);
+  }
+
+  &.active {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+    font-weight: 500;
+  }
+}
+
+/* ── Signed-in banner ────────────────────────────────────────────────── */
+.signed-in-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 10px;
+  padding: 12px 20px;
+  margin-bottom: 28px;
+  font-size: 15px;
+  color: var(--text-h);
+  flex-wrap: wrap;
+}
+
+.signout-btn {
+  padding: 5px 14px;
+  border-radius: 6px;
+  border: 1px solid var(--accent-border);
+  background: transparent;
+  color: var(--accent);
+  font-size: 14px;
+  font-family: var(--sans);
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background: var(--accent-bg);
+  }
+}
+
+/* ── Split layout (form + code) ──────────────────────────────────────── */
+.example-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+
+  @media (max-width: 860px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.already-in {
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  font-size: 15px;
+  color: var(--text);
+  background: var(--social-bg);
+}
+
+/* ── Auth form ───────────────────────────────────────────────────────── */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  background: var(--social-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px;
+
+  h2 {
+    font-size: 20px;
+    margin: 0 0 2px;
+  }
+
+  .form-hint {
+    font-size: 14px;
+    color: var(--text);
+    margin: 0 0 4px;
+  }
+
+  label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-h);
+  }
+
+  .field-note {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text);
+  }
+
+  input {
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    background: var(--bg);
+    color: var(--text-h);
+    font-size: 15px;
+    font-family: var(--sans);
+    transition: border-color 0.2s;
+
+    &::placeholder {
+      color: var(--text);
+      opacity: 0.6;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+  }
+
+  .form-error {
+    font-size: 13px;
+    color: #e53e3e;
+    background: rgba(229, 62, 62, 0.08);
+    border: 1px solid rgba(229, 62, 62, 0.25);
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 0;
+  }
+}
+
+.submit-btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  font-size: 15px;
+  font-family: var(--sans);
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  margin-top: 4px;
+
+  &:hover:not(:disabled) {
+    opacity: 0.85;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+/* ── Code block ──────────────────────────────────────────────────────── */
+.code-label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+
+.code-block {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+
+  pre {
+    margin: 0;
+    padding: 20px;
+    overflow-x: auto;
+    background: var(--code-bg);
+
+    code {
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 165%;
+      color: var(--text-h);
+      background: none;
+      padding: 0;
+      border-radius: 0;
+      display: block;
+      white-space: pre;
+    }
+  }
+}
+
+.example-code {
+  position: sticky;
+  top: 24px;
+}
+
+/* ── Steps list ──────────────────────────────────────────────────────── */
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.step-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--social-bg);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 24px 16px;
+
+  h3 {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text-h);
+    margin: 0;
+  }
+}
+
+.step-image-wrap {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--code-bg);
+  overflow: hidden;
+  max-height: 480px;
+
+  img.step-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+}
+
+.step-desc {
+  padding: 16px 24px;
+  font-size: 15px;
+  line-height: 155%;
+  color: var(--text);
+  margin: 0;
+}
+
+.step-card .code-block {
+  margin: 0 24px 24px;
+  border-radius: 8px;
+}
